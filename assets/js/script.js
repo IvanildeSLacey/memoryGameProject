@@ -49,5 +49,11 @@ const timeGenerator = () => {
     timeValue.innerHTML =`<span>Time:</span>${minutesValue}:${secondsValue}`;
 };
 
+//For calculatin moves
+const movesCounter = () => {
+    movesCount += 1;
+    moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+};
+
 
 
