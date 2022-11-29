@@ -55,7 +55,7 @@ const movesCounter = () => {
     moves.innerHTML = `<span>Moves:</span>${movesCount}`;
 };
 
-//Pick ramdom objects from the item array
+//Pick random objects from the item array
 const generateRandom = (size = 4) => {
     //Temporary array
     let tempArray = [...items];
@@ -73,5 +73,19 @@ const generateRandom = (size = 4) => {
     return cardValues;
 };
 
+const matrixGenerator = (cardValues, size = 4) => {
+    gameContainer.innerHTML = "";
+    cardValues = [...cardValues, ...cardValues];
+    //simple suffle
+    cardValues.sort(() => Math.random() -0.5);
+    for (let i = 0; i < size * size; i++) {}
+};
 
+//Initialize values and func calls
+const initializer = () => {
+    result.innerText = "";
+    winCount = 0;
+    let cardValues = generateRandom();
+    matrixGenerator(cardValues);
+};
 
