@@ -13,16 +13,41 @@ let secondCard = false;
 //Items array
 
 const items = [
-    {name:"bell",image:"bell.jpg" }
-    {name:"decoration",image:"decoration.jpg" }
-    {name:"gingerbread",image:"gingerbread.jpg" }
-    {name:"present",image:"present.jpg" }
-    {name:"presentsanta",image:"presentsanta.jpg" }
-    {name:"reindeer",image:"reindeer.jpg" }
-    {name:"santa",image:"santa.jpg" }
-    {name:"santasheigh",image:"santasleigh.jpg" }
-    {name:"snowman",image:"snowman.jpg" }
-    {name:"tree",image:"tree.jpg" }
-    {name:"xmaself",image:"xmaself.jpg" }
-    {name:"penguim",image:"penguim.jpg" }
-]
+    {name:"bell",image:"bell.jpg" },
+    {name:"decoration",image:"decoration.jpg" },
+    {name:"gingerbread",image:"gingerbread.jpg" },
+    {name:"present",image:"present.jpg" },
+    {name:"presentsanta",image:"presentsanta.jpg" },
+    {name:"reindeer",image:"reindeer.jpg" },
+    {name:"santa",image:"santa.jpg" },
+    {name:"santasheigh",image:"santasleigh.jpg" },
+    {name:"snowman",image:"snowman.jpg" },
+    {name:"tree",image:"tree.jpg" },
+    {name:"xmaself",image:"xmaself.jpg" },
+    {name:"penguim",image:"penguim.jpg" },
+];
+
+//Initial time
+let seconds = 0,
+ minutes = 0;
+//Initial moves and win count
+let movesCount = 0,
+ winCount = 0;
+
+//For timer
+const timeGenerator = () => {
+    seconds += 1;
+    //minutes logic
+    if (seconds >= 60) {
+        minutes += 1;
+        seconds = 0;
+    }
+
+    //Format time before displaying
+    let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+    let minutesValue = minutes < 10 ? `0${minutess}` : minutes;
+    timeValue.innerHTML =`<span>Time:</span>${minutesValue}:${secondsValue}`;
+};
+
+
+
