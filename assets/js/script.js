@@ -55,5 +55,23 @@ const movesCounter = () => {
     moves.innerHTML = `<span>Moves:</span>${movesCount}`;
 };
 
+//Pick ramdom objects from the item array
+const generateRandom = (size = 4) => {
+    //Temporary array
+    let tempArray = [...items];
+    //Initializes cardValue array
+    let cardValues = [];
+    //size should be double (4x4 matrix)/2 since pairs of objects would exist
+    size = (size*size) / 2;
+    //Random object selection
+    for (let i = 0; i < size; i++) {
+        const randomIndex = Math.floor(Math.random() * tempArray.lengh);
+        cardValues.push(tempArray[randomIndex]);
+        //once selected remove the object from the temp array
+        tempArray.splice(randomIndex, 1);
+    }
+    return cardValues;
+};
+
 
 
